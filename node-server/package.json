@@ -1,0 +1,29 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/server/index",
+    "start:server": "nodemon ./build/server/server_bundle.js",
+    "start:client": "nodemon ./build/client/client_bundle.js",
+    "build:server": "webpack --config ./config/server.config.js --watch",
+    "build:client": "webpack --config ./config/client.config.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "nodemon": "2.0.20",
+    "vue-loader": "^17.0.1",
+    "webpack": "5.75.0",
+    "webpack-cli": "5.0.1",
+    "webpack-node-externals": "3.0.0"
+  }
+}
