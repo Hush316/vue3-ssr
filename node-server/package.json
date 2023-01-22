@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/server/index",
-    "start:server": "nodemon ./build/server/server_bundle.js",
-    "start:client": "nodemon ./build/client/client_bundle.js",
+    "dev:server": "nodemon ./build/server/server_bundle.js",
+    "dev:client": "nodemon ./build/client/client_bundle.js",
     "build:server": "webpack --config ./config/server.config.js --watch",
     "build:client": "webpack --config ./config/client.config.js --watch"
   },
@@ -15,7 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",

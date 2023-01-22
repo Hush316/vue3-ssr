@@ -12,5 +12,4 @@ module.exports = merge(baseConfig, {
     path: path.resolve(__dirname, '../build/server')
   },
   externals: [nodeExternals()] // 排除node_modules中的包
-}
-) 
+}) 
