@@ -1,3 +1,4 @@
+import { createPinia } from 'pinia';
 import { createMemoryHistory } from 'vue-router'; //内存路由,在node中使用
 import { renderToString } from 'vue/server-renderer';
 import createApp from '../app';
@@ -12,11 +13,15 @@ server.use(express.static("build"))
 server.get('/*', async (req, res) => {
   let app = createApp()
 
-  //安装路由插件
+  // 安装路由插件
   let router = createRouter(createMemoryHistory())
   app.use(router)
   await router.push(req.url || '/')
   await router.isReady() //等待异步路由加载完成,再渲染页面
+
+  // 安装pinia插件
+  let pinia = createPinia()
+  app.use(pinia)
 
   let appStringHtml = await renderToString(app)
 

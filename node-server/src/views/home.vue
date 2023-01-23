@@ -1,4 +1,8 @@
-<script setup lang='ts'>
+<script setup>
+import useHomeStore from '../store/home.js';
+
+const homeStore =useHomeStore()
+console.log(homeStore.count);
 </script>
 <template>
 <div>
